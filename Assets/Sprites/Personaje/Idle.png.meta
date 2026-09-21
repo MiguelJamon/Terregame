@@ -124,89 +124,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gemini_Generated_Image_o9tieyo9tieyo9ti-removebg-preview_0
+      name: Idle_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 0
-        width: 216
-        height: 219
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a67bc0d4be1f5550800000000000000
-      internalID: 6151669377957328552
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gemini_Generated_Image_o9tieyo9tieyo9ti-removebg-preview_1
-      rect:
-        serializedVersion: 2
-        x: 276
+        x: 25
         y: 0
         width: 214
-        height: 226
+        height: 218
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a39c961d730ce6860800000000000000
-      internalID: 7525163373351782714
+      spriteID: ac414b1c1ec7c2842ab437e07a23f68d
+      internalID: 1216283654
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gemini_Generated_Image_o9tieyo9tieyo9ti-removebg-preview_2
+      name: Idle_1
       rect:
         serializedVersion: 2
-        x: 526
+        x: 277
         y: 0
         width: 212
-        height: 217
+        height: 225
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 25e280db975725bb0800000000000000
-      internalID: -4948763874803831214
+      spriteID: fc3c1ca6d794b1c4ba798378610fe79e
+      internalID: 346245375
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gemini_Generated_Image_o9tieyo9tieyo9ti-removebg-preview_3
+      name: Idle_2
       rect:
         serializedVersion: 2
-        x: 773
+        x: 527
         y: 0
-        width: 216
-        height: 220
+        width: 210
+        height: 216
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a9586c61dcb533cf0800000000000000
-      internalID: -273774215930935910
+      spriteID: 87503fa8ed8b8394ab7499168a75d7f0
+      internalID: -2108455028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_3
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 0
+        width: 214
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071043779495864429c819ef28c8bbab
+      internalID: 720687177
       vertices: []
       indices: 
       edges: []
@@ -215,7 +215,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 572fd159d872c50489b1fb98ab36ade2
     internalID: 0
     vertices: []
     indices: 
@@ -223,12 +223,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Gemini_Generated_Image_o9tieyo9tieyo9ti-removebg-preview_0: 6151669377957328552
-      Gemini_Generated_Image_o9tieyo9tieyo9ti-removebg-preview_1: 7525163373351782714
-      Gemini_Generated_Image_o9tieyo9tieyo9ti-removebg-preview_2: -4948763874803831214
-      Gemini_Generated_Image_o9tieyo9tieyo9ti-removebg-preview_3: -273774215930935910
+      Idle_0: 1216283654
+      Idle_1: 346245375
+      Idle_2: -2108455028
+      Idle_3: 720687177
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

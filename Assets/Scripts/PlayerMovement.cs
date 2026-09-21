@@ -13,6 +13,59 @@ public class PlayerMovement : MonoBehaviour
 
     // Variables de control
     private Vector2 movement;
+    private bool isDefeated;
+    private bool isFrozen;
+    private float lastFacingDirection = 1f;
+    private float freezeTimer;
+
+    public void FreezeMovement(float duration = 0f)
+    {
+        isFrozen = true;
+        movement = Vector2.zero;
+        if (animator != null)
+        {
+            animator.SetBool("isWalking", false);
+        }
+
+        if (duration > 0f)
+        {
+            freezeTimer = duration;
+        }
+    }
+
+    public void UnfreezeMovement()
+    {
+        isFrozen = false;
+        freezeTimer = 0f;
+    }
+
+    public void SetDefeatedPose()
+    {
+        isDefeated = true;
+        isFrozen = true;
+        movement = Vector2.zero;
+
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+        }
+
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.flipX = false;
+            spriteRenderer.flipY = false;
+        }
+
+        bool facingLeft = spriteRenderer != null && spriteRenderer.flipX;
+        float rotationZ = facingLeft ? -90f : 90f;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
+
+        if (animator != null)
+        {
+            animator.SetBool("isWalking", false);
+        }
+    }
 
     private void Awake()
     {
@@ -24,6 +77,29 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (freezeTimer > 0f)
+        {
+            freezeTimer -= Time.deltaTime;
+            if (freezeTimer <= 0f)
+            {
+                isFrozen = false;
+            }
+        }
+
+        if (isDefeated || isFrozen)
+        {
+            movement = Vector2.zero;
+            HandleVisuals();
+            return;
+        }
+
+        if (ScreenMessageController.IsMessageFreezeActive)
+        {
+            movement = Vector2.zero;
+            HandleVisuals();
+            return;
+        }
+
         // 1. Capturar entradas con el nuevo Input System
         movement = Vector2.zero;
 
@@ -44,6 +120,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isFrozen || ScreenMessageController.IsMessageFreezeActive)
+        {
+            return;
+        }
+
         // 3. Aplicar física de movimiento
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
@@ -64,11 +145,13 @@ public class PlayerMovement : MonoBehaviour
         {
             if (movement.x < 0)
             {
-                spriteRenderer.flipX = true; // Mira a la izquierda
+                spriteRenderer.flipX = true;
+                lastFacingDirection = -1f;
             }
             else if (movement.x > 0)
             {
-                spriteRenderer.flipX = false; // Mira a la derecha
+                spriteRenderer.flipX = false;
+                lastFacingDirection = 1f;
             }
         }
     }
